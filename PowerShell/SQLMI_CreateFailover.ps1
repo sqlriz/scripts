@@ -17,7 +17,7 @@ Get-AzContext
 
 # Connect-AzAccount
 # The SubscriptionId in which to create these objects
-$SubscriptionId = '23d34427-d6a7-4313-be73-1169643a85dd'
+$SubscriptionId = '<23d34427-d6a7-4313-be73-1169643a>'
 # Create a random identifier to use as subscript for the different resource names
 $randomIdentifier = $(Get-Random)
 # Set the resource group name and location for your managed instance

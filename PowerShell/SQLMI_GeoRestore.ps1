@@ -1,6 +1,6 @@
 # Connect-AzAccount
 # The SubscriptionId in which to create these objects
-$SubscriptionId = '23d34427-d6a7-4313-be73-1169643a8'
+$SubscriptionId = '23d34427-d6a7-4313-be73-1169643a3'
 # Set the information for your managed instance
 $SourceResourceGroupName = "SQLResources"
 $SourceInstanceName = "sql1243"

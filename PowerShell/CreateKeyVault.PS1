@@ -1,15 +1,24 @@
-Connect-AzAccount
-Get-AzSubscription
-Get-AzContext
-Set-AzContext '<subscription name>'
+#For Demo
 
-$subscription = '<Subscriptionanme>'
-$ResourceGroup = '<Resource group name>'
+Connect-AzAccount
+
+Get-AzContext #Get information about which Subscription is session running in
+Get-AzSubscription #find all subscriptions under the account
+
+
+$subscription = '<Subscriptionname>'
+Set-AzContext $subscription
+
+
+$randomIdentifier = $(Get-Random)
+$ResourceGroup = "rg-$randomIdentifier"
 $location = 'East US2'
-$VaultName = 'azurekeyvaultazure'
+$VaultName = "ak-$randomIdentifier"
 $Userprincipal = '<email@microsoft.com>'
-$keyname = '<keyname>'
+$keyname = "azkey-$randomIdentifier"
 $outputfile = 'C:\<folder>\backup.keybackup'
+
+
 
 #New Resource group if it doesn't exist
 New-AzResourceGroup -Name $ResourceGroup -Location $location

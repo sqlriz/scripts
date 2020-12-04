@@ -16,7 +16,7 @@ $location = 'East US2'
 $VaultName = "ak-$randomIdentifier"
 $Userprincipal = '<email@microsoft.com>'
 $keyname = "azkey-$randomIdentifier"
-$outputfile = 'C:\<folder>\backup.keybackup'
+$outputfile = "C:\$randomIdentifier\backup_$keyname.keybackup"
 
 
 
@@ -44,4 +44,10 @@ Add-AzKeyVaultKey -VaultName $VaultName -Name $keyname -Destination 'Software' -
 Get-Azkeyvaultkey -VaultName $VaultName -Name $keyname
    
 #Backup key
+
+$path = "C:\$randomIdentifier"
+If(!(test-path $path))
+{
+      New-Item -ItemType Directory -Force -Path $path
+}
 Backup-AzKeyVaultKey -VaultName $VaultName -Name $keyname -OutputFile $outputfile
